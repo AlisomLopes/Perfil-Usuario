@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style-profile.css">
+    <link rel="shortcut icon" href="assets/Fav-Icon.svg" type="image/x-icon">
+    <title>My Profile!</title>
+</head>
+<body>
+    <header class="header-profile">
+        <figure>
+            <img src="assets/no-avatar-profile.svg" alt="Foto de perfil do usuário" width="250px" height="250px">
+        </figure>
+        <section class="name-bio-links">
+            <p id="name-profile">Name</p>
+            <p id="biography-profile">Biography</p>
+            <nav class="container-links">
+                <a href="#" class="links">facebook</a>
+                <a href="#" class="links">instagram</a>
+                <a href="#" class="links">twitter/X</a>
+            </nav>
+        </section>
+        <aside id="aside-edit">
+            <form method="get" id="form">
+                <section id="edit-container">
+                    <article class="input-area">
+                        <label for="input-name-profile" class="label-input">profile name</label>
+                        <input type="text" name="name" id="input-name-profile" autocomplete="off" placeholder="name" maxlength="30ch" class="input-edits">
+                    </article>
+                    <article class="input-area">
+                        <label for="input-biography" class="label-input">biography</label>
+                        <input type="textarea" name="biography" id="input-biography" autocomplete="off" placeholder="biography" maxlength="70ch" class="input-edits">
+                    </article>
+                    <nav class="container-links">
+                        <a href="#" class="links">facebook</a>
+                        <a href="#" class="links">instagram</a>
+                        <a href="#" class="links">twitter/X</a>
+                    </nav>
+                </section>
+                <div id="container-submit">
+                    <input type="submit" id="save-button" value="save profile" onclick="editingProfile();return false"></button>
+                </div>
+            </form>
+        </aside>
+    </header>
+    <script src="main.js"></script>
+</body>
+</html>
