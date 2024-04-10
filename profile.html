@@ -16,10 +16,13 @@
             <p id="name-profile">Name</p>
             <p id="biography-profile">Biography</p>
             <nav class="container-links">
-                <a href="#" class="links">facebook</a>
-                <a href="#" class="links">instagram</a>
-                <a href="#" class="links">twitter/X</a>
+                <a href="#" class="links" target="_blank" id="facebook">facebook</a>
+                <a href="#" class="links" target="_blank" id="instagram">instagram</a>
+                <a href="#" class="links" target="_blank" id="twitter/x">twitter/X</a>
             </nav>
+            <div id="button-show-edit">
+                <button id="button-edit" onclick="showDisplay()">edit profile</button>
+            </div>
         </section>
         <aside id="aside-edit">
             <form method="get" id="form">
@@ -32,14 +35,18 @@
                         <label for="input-biography" class="label-input">biography</label>
                         <input type="textarea" name="biography" id="input-biography" autocomplete="off" placeholder="biography" maxlength="70ch" class="input-edits">
                     </article>
-                    <nav class="container-links">
-                        <a href="#" class="links">facebook</a>
-                        <a href="#" class="links">instagram</a>
-                        <a href="#" class="links">twitter/X</a>
-                    </nav>
                 </section>
-                <div id="container-submit">
-                    <input type="submit" id="save-button" value="save profile" onclick="editingProfile();return false"></button>
+                <div id="container-aside">
+                    <input type="submit" id="save-button" value="save profile" onclick="editingProfile();return false" onsubmit="hiddenDisplay()"></button>
+
+                    <label for="input-facebook" class="label-media">facebook</label>
+                    <input type="url" name="social-media" id="input-facebook" class="social-media">
+
+                    <label for="input-instagram" class="label-media">instagram</label>
+                    <input type="url" name="social-media" id="input-instagram" class="social-media">
+
+                    <label for="input-twitter/x" class="label-media">twitter/x</label>
+                    <input type="url" name="social-media" id="input-twitter/x" class="social-media">
                 </div>
             </form>
         </aside>
