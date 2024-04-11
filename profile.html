@@ -12,19 +12,17 @@
         <figure>
             <img src="assets/no-avatar-profile.svg" alt="Foto de perfil do usuário" width="250px" height="250px">
         </figure>
-        <section class="name-bio-links">
-            <p id="name-profile">Name</p>
-            <p id="biography-profile">Biography</p>
+        <section class="name-bio-links" id="name-bio-links">
+            <p id="name-profile" class="user-profile">Name</p>
+            <p id="biography-profile" class="user-profile">Biography</p>
             <nav class="container-links">
                 <a href="#" class="links" target="_blank" id="facebook">facebook</a>
                 <a href="#" class="links" target="_blank" id="instagram">instagram</a>
                 <a href="#" class="links" target="_blank" id="twitter/x">twitter/X</a>
             </nav>
-            <div id="button-show-edit">
-                <button id="button-edit" onclick="showDisplay()">edit profile</button>
-            </div>
+            <button id="button-edit" onclick="showDisplay()" class="button-class">edit profile</button>
         </section>
-        <aside id="aside-edit">
+        <aside id="display-edit">
             <form method="get" id="form">
                 <section id="edit-container">
                     <article class="input-area">
@@ -36,9 +34,7 @@
                         <input type="textarea" name="biography" id="input-biography" autocomplete="off" placeholder="biography" maxlength="70ch" class="input-edits">
                     </article>
                 </section>
-                <div id="container-aside">
-                    <input type="submit" id="save-button" value="save profile" onclick="editingProfile();return false" onsubmit="hiddenDisplay()"></button>
-
+                <section id="container-aside">
                     <label for="input-facebook" class="label-media">facebook</label>
                     <input type="url" name="social-media" id="input-facebook" class="social-media">
 
@@ -47,10 +43,21 @@
 
                     <label for="input-twitter/x" class="label-media">twitter/x</label>
                     <input type="url" name="social-media" id="input-twitter/x" class="social-media">
+                </section>
+                <div id="container-submit-input">
+                    <input type="submit" id="save-button" value="save profile" onclick="editingProfile();return false" onsubmit="hiddenDisplay()" class="button-class">
                 </div>
             </form>
         </aside>
     </header>
+    <footer>
+        <span>
+            <p class="right-contact" id="contact">github:
+                <a href="https://github.com/AlisomLopes" target="_blank">@AlisomLopes</a>
+            </p>
+            <p class="right-contact" id="right">copyrigth&copy; 2024</p>
+        </span>
+    </footer>
     <script src="main.js"></script>
 </body>
 </html>

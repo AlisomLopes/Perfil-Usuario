@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     border: 0;
     margin: 0;
@@ -12,6 +13,8 @@
     --color-backgroud_header: rgb(50, 59, 76);
     --color-white: rgb(246, 246, 246);
     --color-gray: rgb(110, 110, 110);
+    --color-button: rgb(40, 73, 134);
+    --color-button_hover: rgb(56, 92, 158);
 }
 body{
     display: flex;
@@ -34,37 +37,27 @@ header > figure {
 }
 .name-bio-links{
     display: flex;
-    width: 80%;
+    width: 100%;
     height: 100%;
     flex-direction: column;
     padding: 10px 20px;
     justify-content: space-around;
 }
-#name-profile{
-    width: 100%;
-    height: 20%;
-    font-size: 15pt;
-    font-weight: 700;
-    padding: 10px 20px;
-    color: var(--color-white);
-    background-color: var(--color-backgroud_header);
-}
-#name-profile::placeholder{
-    color: var(--color-gray);
-    text-transform: uppercase;
-}
-#biography-profile{
-    width: 100%;
-    height: 100px;
-    font-size: 12pt;
+.user-profile{
     font-weight: 600;
     padding: 10px 20px;
     color: var(--color-white);
     background-color: var(--color-backgroud_header);
 }
-#biography-profile::placeholder{
-    color: var(--color-gray);
-    text-transform: uppercase;
+#name-profile{
+    width: 100%;
+    height: 20%;
+    font-size: 15pt;
+}
+#biography-profile{
+    width: 100%;
+    height: 100px;
+    font-size: 12pt;
 }
 .container-links{
     padding: 10px 20px;
@@ -82,6 +75,15 @@ header > figure {
 .links:hover{
     text-decoration: underline;
 }
+#button-edit{
+    display: flex;
+    align-self: flex-end;
+}
+#display-edit{
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+}
 #form{
     display: none;
     width: 100%;
@@ -89,15 +91,31 @@ header > figure {
 }
 #edit-container{
     display: flex;
-    background-color: none;
     width: 100%;
+    max-width: 1400px;
     height: 100%;
     flex-direction: column;
+    margin: 0px 10px;
 }
 .input-area{
     width: 100%;
+    max-width: 1200px;
     height: 100%;
-    margin: 3px 0px;
+    margin: 3px 20px;
+}
+.label-input{
+    text-transform: uppercase;
+    font-size: 15pt;
+    font-weight: 700;
+    color: var(--color-white);
+    padding: 3px 8px;
+}
+.input-edits{
+    border-radius: 20px;
+    border: 2px solid var(--color-gray);
+}
+.input-edits:hover{
+    border: 3px solid var(--color-white);
 }
 #input-name-profile{
     width: 100%;
@@ -125,86 +143,27 @@ header > figure {
     color: var(--color-gray);
     text-transform: uppercase;
 }
-.input-edits{
-    border-radius: 20px;
-    border: 2px solid var(--color-gray);
-}
-.input-edits:hover{
-    border: 3px solid var(--color-white);
-}
-.label-input{
-    text-transform: uppercase;
-    font-size: 15pt;
-    font-weight: 700;
-    color: var(--color-white);
-    padding: 3px 8px;
-}
-#button-show-edit{
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-self: flex-end;
-}
-#button-edit{
-    width: 200px;
-    height: 100%;
-    min-height: 50px;
-    background-color: rgb(40, 73, 134);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 12pt;
-    color: rgba(245, 245, 245, 0.801);
-}
-#button-edit:hover{
-    background-color: rgb(56, 92, 158);
-    cursor: pointer;
-    color: var(--color-white);
-    transform: scale(1.05);
-    transition: 0.2s;
-}
-#aside-edit{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    padding: 10px 10px;
-}
 #container-aside{
     display: flex;
-    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
     margin: 0px 15px;
-    gap: 8px;
 }
-#save-button{
-    width: 200px;
-    height: 100%;
-    max-height: 50px;
-    background-color: rgb(40, 73, 134);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: 500;
+.label-media{
     font-size: 12pt;
-    color: rgba(245, 245, 245, 0.801);
-}
-#save-button:hover{
-    background-color: rgb(56, 92, 158);
-    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
     color: var(--color-white);
-    transform: scale(1.05);
-    transition: 0.2s;
+    letter-spacing: 1px;
 }
 .social-media{
     width: 100%;
     height: 40%;
-    max-height: 30px;
+    max-height: 50px;
     border-radius: 20px;
     border: 2px solid var(--color-gray);
     background-color: var(--color-backgroud_header);
@@ -216,10 +175,60 @@ header > figure {
 .social-media:hover{
     border: 3px solid var(--color-white);
 }
-.label-media{
-    font-size: 12pt;
-    font-weight: 500;
+#container-submit-input{
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px 10px;
+}
+.button-class{
+    width: 200px;
+    height: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    background-color: var(--color-button);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12pt;
+    color: rgba(245, 245, 245, 0.801);
+}
+.button-class:hover{
+    background-color: var(--color-button_hover);
+    cursor: pointer;
     color: var(--color-white);
-    letter-spacing: 1px;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+footer{
+    display: flex;
+    width: 100vw;
+    height: 200px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+footer > span {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.right-contact{
+    font-size: 15pt;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+#contact > a {
+    color: rgb(192, 8, 69);
+}
+#contact > a:hover{
+    text-decoration: underline;
 }
